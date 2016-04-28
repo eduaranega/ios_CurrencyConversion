@@ -1,10 +1,5 @@
-//
 //  ViewController.m
-//  CurrencyConversion
-//
 //  Created by Eduardo Aranega on 4/27/16.
-//  Copyright © 2016 Eduardo Aranega. All rights reserved.
-//
 
 #import "ViewController.h"
 #import "CurrencyRequest/CRCurrencyRequest.h"
@@ -17,7 +12,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *currencyA;
 @property (weak, nonatomic) IBOutlet UILabel *currencyB;
 @property (weak, nonatomic) IBOutlet UILabel *currencyC;
-
+@property (weak, nonatomic) IBOutlet UISegmentedControl *currencySelected;
 @property (nonatomic) CRCurrencyRequest *req;
 
 @end
@@ -27,7 +22,6 @@
 - (IBAction)buttonTapped:(id)sender {
 
     self.convertButton.enabled = NO;
-
     self.req = [[CRCurrencyRequest alloc] init];
     self.req.delegate = self;
     [self.req start];
@@ -52,6 +46,15 @@
     double poundValue = inputValue * currencies.GBP;
     temp = [NSString stringWithFormat:@"%.2f", poundValue];
     self.currencyC.text = temp;
+
+    switch (self.currencySelected.selectedSegmentIndex) {
+        case 0: self.inputField.text = self.currencyA.text;
+            break;
+        case 1: self.inputField.text = self.currencyB.text;
+            break;
+        case 2: self.inputField.text = self.currencyC.text;
+            break;
+    }
 }
 
 @end

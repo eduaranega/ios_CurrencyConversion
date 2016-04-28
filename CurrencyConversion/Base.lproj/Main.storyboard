@@ -26,7 +26,7 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter an ammount in U.S. dollars" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zW8-4m-Q0a">
-                                <rect key="frame" x="20" y="144" width="280" height="30"/>
+                                <rect key="frame" x="20" y="104" width="280" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -66,22 +66,32 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="8gR-br-0CW">
+                                <rect key="frame" x="100" y="142" width="121" height="29"/>
+                                <segments>
+                                    <segment title="EUR"/>
+                                    <segment title="JPY"/>
+                                    <segment title="GBP"/>
+                                </segments>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="rWR-U4-ZVa" firstAttribute="top" secondItem="zW8-4m-Q0a" secondAttribute="bottom" constant="33" id="2io-hY-wxP"/>
                             <constraint firstItem="Fkw-1R-iwO" firstAttribute="top" secondItem="Lqb-ws-TbJ" secondAttribute="bottom" constant="5" id="43r-mr-zXO"/>
                             <constraint firstItem="rWR-U4-ZVa" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="4Ls-Pd-72J"/>
                             <constraint firstItem="FKd-qg-xuZ" firstAttribute="top" secondItem="uvX-Vm-UV4" secondAttribute="bottom" constant="8" id="8EC-Bi-RmR"/>
                             <constraint firstItem="ez2-iJ-wJV" firstAttribute="centerY" secondItem="Fkw-1R-iwO" secondAttribute="centerY" id="GB8-7j-cf1"/>
+                            <constraint firstItem="8gR-br-0CW" firstAttribute="top" secondItem="zW8-4m-Q0a" secondAttribute="bottom" constant="8" id="J6V-xu-SNw"/>
                             <constraint firstItem="Lqb-ws-TbJ" firstAttribute="top" secondItem="w7b-Bm-2nb" secondAttribute="bottom" constant="5" id="LaT-4x-M2e"/>
                             <constraint firstItem="ez2-iJ-wJV" firstAttribute="top" secondItem="FKd-qg-xuZ" secondAttribute="bottom" constant="8" id="NhD-Qu-zhB"/>
                             <constraint firstItem="zW8-4m-Q0a" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Pjc-So-vsa"/>
                             <constraint firstItem="uvX-Vm-UV4" firstAttribute="centerY" secondItem="w7b-Bm-2nb" secondAttribute="centerY" id="TKD-nE-roI"/>
                             <constraint firstItem="rWR-U4-ZVa" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="XV7-EA-2FH"/>
                             <constraint firstItem="FKd-qg-xuZ" firstAttribute="centerY" secondItem="Lqb-ws-TbJ" secondAttribute="centerY" id="Xjw-E9-R86"/>
+                            <constraint firstItem="rWR-U4-ZVa" firstAttribute="top" secondItem="8gR-br-0CW" secondAttribute="bottom" constant="26" id="aLh-oh-TrQ"/>
                             <constraint firstItem="w7b-Bm-2nb" firstAttribute="top" secondItem="rWR-U4-ZVa" secondAttribute="bottom" constant="49" id="cwv-yX-vgv"/>
                             <constraint firstItem="uvX-Vm-UV4" firstAttribute="top" secondItem="rWR-U4-ZVa" secondAttribute="bottom" constant="46" id="t5U-pH-4qY"/>
+                            <constraint firstItem="8gR-br-0CW" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="uXW-1N-pO1"/>
                         </constraints>
                     </view>
                     <connections>
@@ -89,6 +99,7 @@
                         <outlet property="currencyA" destination="w7b-Bm-2nb" id="CII-0E-byN"/>
                         <outlet property="currencyB" destination="Lqb-ws-TbJ" id="z1F-T6-49Z"/>
                         <outlet property="currencyC" destination="Fkw-1R-iwO" id="jek-d6-98p"/>
+                        <outlet property="currencySelected" destination="8gR-br-0CW" id="dGv-0W-XcQ"/>
                         <outlet property="inputField" destination="zW8-4m-Q0a" id="zoX-Ns-GKI"/>
                     </connections>
                 </viewController>
